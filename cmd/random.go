@@ -23,12 +23,15 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var passwdLength int
+
 // randomCmd represents the random command
 var randomCmd = &cobra.Command{
 	Use:   "random",
 	Short: "Generate a random password",
 	Long:  `Generate a random password`,
 	Run: func(cmd *cobra.Command, args []string) {
+
 		fmt.Println(generatePassword())
 	},
 }
@@ -36,20 +39,11 @@ var randomCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(randomCmd)
 
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// randomCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// randomCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	randomCmd.Flags().IntP("length", "l", 12, "The length of the password")
+	randomCmd.Flags().IntVarP(&passwdLength, "length", "l", 12, "The length of the password")
 }
 
 func generatePassword() string {
-	length := 12
+	length := passwdLength
 	chars := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 	charsByte := []byte(chars)
 	var result strings.Builder
