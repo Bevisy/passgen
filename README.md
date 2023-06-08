@@ -37,3 +37,22 @@ Flags:
 
 Use "passgen [command] --help" for more information about a command.
 ```
+
+## Example
+```sh
+# Generate random password
+❯ passgen random
+LDI5rOe8i541
+
+# Generate a password of specified length
+❯ passgen random -l 20
+aNdMI7kgb3aJPB65MFTd
+
+# Generate UUID
+❯ passgen uuid
+4129ac2653690082a488ce3eaf04afa6
+
+# Format output
+❯ passgen uuid -f
+fe22239b-1983-8914-d065-d4093f72c327
+```
