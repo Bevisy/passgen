@@ -22,3 +22,6 @@ go.work
 
 # App
 bin/
+
+# Other
+.DS_Store
