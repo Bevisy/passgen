@@ -1,9 +1,26 @@
 # passgen
 A Simple and Secure  Password Generator.
 
+## Install
+### brew
+```sh
+brew tap Bevisy/passgen
+brew install passgen
+
+passgen --help
+```
+
+### source
+```sh
+git clone git@github.com:Bevisy/passgen.git
+make install
+
+passgen --help
+```
+
 ## Usage
 ```sh
-❯ ./bin/passgen --help
+❯ passgen --help
 A simple and secure password generator
 
 Usage:
